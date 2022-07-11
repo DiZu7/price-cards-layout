@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -11,8 +13,8 @@ li {
 
 html {
   font-family: 'Montserrat', sans-serif;
-  background-color: #141b1c;
-  color: #fff;
+  background-color: $page-background-color;
+  color: $text-color-white;
 }
 
 .page {
@@ -25,17 +27,11 @@ html {
   margin: auto;
 }
 
-.price-card_popular {
-  position: relative;
-  overflow: hidden;
-}
-
 .price-card {
   width: 380px;
   height: 770px;
-  padding-top: 33px;
   margin-right: 18px;
-  background-color: #334247;
+  background-color: $background-color-grey;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.087466);
 
   &:last-child {
@@ -43,6 +39,7 @@ html {
   }
 
   &__title {
+    margin-top: 33px;
     font-weight: 700;
     font-size: 35px;
     line-height: 43px;
@@ -63,15 +60,15 @@ html {
     font-size: 55px;
     line-height: 67px;
     text-align: center;
+
     &_green {
-      background-color: #5bb189;
+      background-color: $background-color-green;
     }
     &_blue {
-      background-color: #3a6ba5;
+      background-color: $background-color-blue;
     }
-
     &_orange {
-      background-color: #ec632a;
+      background-color: $background-color-orange;
     }
   }
 
@@ -96,7 +93,7 @@ html {
     padding-left: 22px;
 
     &:nth-child(odd) {
-      background-color: #2a343880;
+      background-color: $background-color-dark-grey;
     }
   }
 
@@ -104,6 +101,7 @@ html {
     width: 15px;
     height: 13px;
     margin-right: 22px;
+
     &_green {
       background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson+25/verification-checkmark-symbol_green.png);
     }
@@ -114,42 +112,49 @@ html {
       background-image: url(https://gromcode.s3.eu-central-1.amazonaws.com/front-end/html-css/lesson+25/verification-checkmark-symbol_orange.png);
     }
   }
+
   &__order-btn {
     display: block;
     width: 154px;
     height: 40px;
     margin: 39px auto 0;
-
     border: none;
     border-radius: 20px;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    color: #fff;
+    color: $text-color-white;
 
     &_green {
-      background-color: #5bb189;
+      background-color: $background-color-green;
     }
-
     &_blue {
-      background-color: #3a6ba5;
+      background-color: $background-color-blue;
     }
     &_orange {
-      background-color: #ec632a;
+      background-color: $background-color-orange;
     }
   }
-  &__rating {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 147px;
-    width: 25px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    transform: rotate(-45deg);
-    background-color: #dc3f45;
-    text-align: center;
+
+  &_popular {
+    position: relative;
+    overflow: hidden;
   }
+}
+
+.rating {
+  position: absolute;
+  display: flex;
+  right: -30px;
+  top: 30px;
+  width: 147px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  background-color: $background-color-red;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
 }
